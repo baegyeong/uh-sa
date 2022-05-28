@@ -1,0 +1,8 @@
+body {
+  background: url(C:/Users/User/Desktop/uhsa/first_image.jpg);
+  /*  background-size: 1340px 760px;*/
+  background-size: 85%;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-color: #008cff;
+}
