@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "NIXGONB-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONL-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONM-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.nav {
+  background-color: #ffffff;
+}
+.title {
+  text-align: center;
+}
+.title h1 {
+  font-family: "NIXGONM-Vb";
+  color: #008bff;
+  font-size: 300%;
+  margin: 1%;
+  letter-spacing: 0.05em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(7, 0.4fr);
+  gap: 40px;
+  grid-template-rows: repeat(4, 220px);
+  margin-top: 5%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 5%;
+}
+.item {
+  background-color: #d9d9d9;
+}
+
+.item:nth-child(1) {
+  grid-column: span 4;
+}
+.item:nth-child(2) {
+  grid-column: span 3;
+}
+
+.item:nth-child(3) {
+  grid-row: span 2;
+  grid-column: span 3;
+}
+.item:nth-child(4) {
+  grid-column: span 4;
+}
+
+.item:nth-child(5) {
+  grid-column: span 2;
+}
+.item:nth-child(6) {
+  grid-column: span 2;
+}
+.item:nth-child(7) {
+  grid-column: span 2;
+}
+.item:nth-child(8) {
+  grid-column: span 2;
+}
+.item:nth-child(9) {
+  grid-column: span 3;
+}
+body {
+  background-color: #e7f4ff;
+}

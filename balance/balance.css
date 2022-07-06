@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "NIXGONB-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONL-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONM-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.nav {
+  background-color: #ffffff;
+}
+.title {
+  text-align: center;
+  line-height: 13vh;
+}
+.title h1 {
+  font-family: "NIXGONM-Vb";
+  color: #008bff;
+  font-size: 300%;
+  margin: 1%;
+}
+.choice {
+  display: inline-block;
+  height: 5%;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  font-family: "NIXGONM-Vb";
+  font-size: 150%;
+  position: absolute;
+}
+.choice:nth-child(3) {
+  margin-left: 22%;
+  line-height: 390%;
+  float: left;
+}
+.choice:nth-child(2) {
+  margin-right: 23%;
+  float: right;
+}
+.vs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+}
+.vs img {
+  position: relative;
+  max-width: 45%;
+  max-height: 45%;
+}
+.timerGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -3%;
+}
+
+.timer {
+  width: 10vw;
+  height: 7vh;
+  margin-right: 0.8%;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+
+#Timer {
+  border: 0;
+  width: 7vw;
+  font-size: 3vh;
+  text-align: center;
+  margin-top: 6%;
+  margin-left: 14%;
+}
+body {
+  background-color: #e7f4ff;
+}

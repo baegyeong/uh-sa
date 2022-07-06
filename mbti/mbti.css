@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "NIXGONB-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONL-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONM-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.nav {
+  background-color: #ffffff;
+}
+.title {
+  text-align: center;
+}
+.title h1 {
+  font-family: "NIXGONM-Vb";
+  color: #008bff;
+  font-size: 300%;
+  margin: 1%;
+}
+
+.title h4 {
+  font-family: "NIXGONL-Vb";
+  margin: 0%;
+}
+
+.question {
+  font-family: "NIXGONB-Vb";
+  font-size: 270%;
+  color: #008bff;
+  text-align: center;
+  line-height: 14vh;
+}
+
+.choice {
+  display: inline-block;
+  height: 5%;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  font-family: "NIXGONM-Vb";
+  font-size: 150%;
+  position: absolute;
+}
+.choice:nth-child(3) {
+  margin-left: 22%;
+  line-height: 13vh;
+  float: left;
+}
+.choice:nth-child(2) {
+  margin-right: 23%;
+  float: right;
+}
+.vs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vs img {
+  position: relative;
+  max-width: 45%;
+  max-height: 45%;
+}
+
+body {
+  background-color: #e7f4ff;
+}
