@@ -51,7 +51,7 @@
   vertical-align: middle;
   justify-content: center;
   align-items: center;
-  font-family: "NIXGONM-Vb";
+  font-family: "NIXGONB-Vb";
   font-size: 150%;
   position: absolute;
 }
@@ -73,6 +73,17 @@
   position: relative;
   max-width: 45%;
   max-height: 45%;
+}
+#next {
+  position: fixed;
+  float: right;
+  display: flex;
+  bottom: 3%;
+  right: 0%;
+}
+#next img {
+  max-width: 80%;
+  max-height: 80%;
 }
 
 body {
