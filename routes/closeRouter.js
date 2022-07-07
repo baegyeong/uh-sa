@@ -1,10 +1,11 @@
 var express = require('express');
 const router = express.Router();
+
 const { User } = require('../models');
 const { Sinseo } = require('../models');
 const { Balance } = require('../models');
 
-router.get('/', function(req, res) {
+router.get('/', function(req, res) { 
     res.send('<h1>It\'s time to close!</h1>');
 });
 
