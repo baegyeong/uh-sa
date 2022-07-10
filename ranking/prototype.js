@@ -9,7 +9,7 @@ function clickFriendly() {
   location.href = "../game_choice/game_choice.html";
 }
 function clickMore() {
-  location.href = "../moreGame/moreGame.html";
+  location.href = "../more_game/more_game.html";
 }
 
 know.addEventListener("click", clickKnow);
