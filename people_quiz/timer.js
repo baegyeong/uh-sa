@@ -20,14 +20,13 @@ let goTimeZero = function () {
 let setTime = setInterval(goTimeZero, 1000);
 
 // stop 버튼을 통해 타이머, 정답화면 제어
-function clickBtn(event) {
+function clickBtn() {
   if (Stop.innerText === "STOP") {
     event.preventDefault();
     clearInterval(setTime);
     Stop.innerText = "PLAY";
     Stop.style.color = "#008bff";
   } else {
-    console.log(sec);
     setTime = setInterval(goTimeZero, 1000);
 
     Stop.innerText = "STOP";

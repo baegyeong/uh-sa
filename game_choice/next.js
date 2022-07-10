@@ -17,13 +17,15 @@ const nextBalance = document.querySelector("#goBalance");
 const nextIntroduce = document.querySelector("#goIntroduce");
 
 function clickPeople() {
-  location.href = "../people_quiz/people_quiz_start/people_quiz_start.html";
   inputPeople();
+  location.href = "../people_quiz/people_quiz_start/people_quiz_start.html";
 }
+
 function clickBalance() {
-  location.href = "../balance/balance_start/balance_start.html";
   inputBalance();
+  location.href = "../balance/balance_start/balance_start.html";
 }
+
 function clickIntroduce() {
   location.href = "../more_game/more_game.html";
 }
