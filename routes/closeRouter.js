@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { User } = require('../models');
 const { Sinseo } = require('../models');
-const { Oxquiz } = require('../models');
+const { Commonsense } = require('../models');
 /*
 
 */
