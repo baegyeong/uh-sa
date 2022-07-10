@@ -3,8 +3,10 @@ const router = express.Router();
 
 const { User } = require('../models');
 const { Sinseo } = require('../models');
-const { Balance } = require('../models');
+const { Oxquiz } = require('../models');
+/*
 
+*/
 router.get('/', function(req, res) { 
     res.send('<h1>It\'s time to close!</h1>');
 });
@@ -19,10 +21,10 @@ router.get('/sinseo', function(req, res, next) {
     }
 });
 
-router.get('/balance', function(req, res, next) {
+router.get('/commonsense', function(req, res, next) {
     try{
-        const balance = Balance.findall();
-        res.json(balance);
+        const commonsense = Commonsense.findall();
+        res.json(commonsense);
     } catch(err){
         console.error(err);
         next(err);
