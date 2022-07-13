@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "NIXGONB-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONL-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONM-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+}
+.nav h3 {
+  font-family: "NIXGONL-Vb";
+  display: inline;
+  vertical-align: super;
+  color: #ffffff;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  font-size: 160%;
+}
+
+.header {
+  height: 11vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+#main {
+  position: absolute;
+  font-family: "NIXGONM-Vb";
+  color: #ffffff;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 55px;
+}
+#sub {
+  position: absolute;
+  font-family: "NIXGONM-Vb";
+  color: #ffffff;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+}
+a {
+  text-decoration-line: none;
+}
+#btn {
+  position: absolute;
+  font-family: "NIXGONB-Vb";
+  color: #008bff;
+  font-size: 19px;
+  width: 8vw;
+  height: 5vh;
+  border: 0;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+body {
+  margin: 0%;
+  background-color: #ffffff;
+}
+.nav {
+  height: 20vh;
+  padding: 1.5% 2.5%;
+}
+
+ol {
+  font-family: "NIXGONL-Vb";
+  color: #ffffff;
+  text-align: end;
+  float: right;
+  vertical-align: super;
+  line-height: 0.8vh;
+  width: 25vw;
+}
+
+li {
+  cursor: pointer;
+  color: #ffffff;
+  display: inline;
+  padding: 3%;
+  list-style: none;
+}
+.logo {
+  width: 32px;
+  height: 32px;
+}
+img {
+  margin-top: -11vh;
+  max-width: 100%;
+  max-height: 75%;
+}
+
+#know {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  float: left;
+  padding-right: 10%;
+}
+
+.title {
+  font-family: "NIXGONB-Vb";
+  font-size: 21px;
+  color: #008bff;
+  margin-bottom: 5%;
+  letter-spacing: 0.1em;
+}
+.subtitle {
+  font-family: "NIXGONM-Vb";
+  font-size: 15px;
+  color: black;
+  margin-bottom: 8%;
+  line-height: 3vh;
+  letter-spacing: 0.1em;
+}
+.know-btn,
+.friend-btn {
+  font-family: "NIXGONM-Vb";
+  width: 8vw;
+  height: 5vh;
+  border: 0;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.ex-img {
+  float: left;
+  padding-top: 6%;
+}
+.ex-img img {
+  max-height: 80%;
+}
+
+.paragraph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10%;
+}
+
+#friend {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  float: left;
+  padding-right: 13%;
+}
+#all-paragraph {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "NIXGONB-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONL-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONM-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title {
+  text-align: center;
+}
+.title h1 {
+  font-family: "NIXGONM-Vb";
+  color: #008bff;
+  font-size: 300%;
+  margin: 1%;
+  letter-spacing: 0.05em;
+}
+
+.title h4 {
+  font-family: "NIXGONL-Vb";
+  margin: 0%;
+  letter-spacing: 0.05em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  grid-template-rows: minmax(700px, auto);
+  margin: 0.5% 7%;
+  margin-bottom: 5%;
+}
+.item {
+  background-color: #e7f4ff;
+}
+.pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+  width: 90%;
+  height: 35%;
+}
+.container h2 {
+  margin-top: 10%;
+  margin-bottom: 3%;
+  margin-left: 7%;
+  margin-right: 7%;
+  font-family: "NIXGONM-Vb";
+  color: #008bff;
+}
+
+.container h5 {
+  font-size: 105%;
+  margin: 6% 7%;
+  font-family: "NIXGONL-Vb";
+}
+
+.container h3 {
+  font-family: "NIXGONL-Vb";
+  margin: 15% 7%;
+  margin-bottom: 0%;
+}
+.inputNum {
+  margin: 1% 7%;
+  font-size: 120%;
+  padding: 15px 40px;
+  background: #ffffff;
+  border: 1px solid #008bff;
+  box-shadow: 2px 2px 2px rgba(0, 139, 255, 0.54);
+  margin-bottom: 15%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 3%;
+}
+
+.next {
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  align-content: end;
+  float: right;
+}
+.next img {
+  max-width: 80%;
+  max-height: 80%;
+}
+.inputNum img {
+  max-width: 12%;
+  max-height: 12%;
+  margin-right: 4%;
+}
+
+input {
+  border: 0;
+  width: 25vw;
+  font-size: 2vh;
+}

@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "NIXGONB-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONL-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONM-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.hidden {
+  display: none;
+}
+.header {
+  background-color: #ffffff;
+  height: 11vh;
+}
+.pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  margin: 4%;
+  margin-bottom: 3%;
+  border: 2px solid black;
+  width: 20vw;
+  height: 60vh;
+}
+.name {
+  transform: translate(-10%, 130%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 20vh;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+
+.timerGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  width: 10vw;
+  height: 7vh;
+  margin-right: 0.8%;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+
+.stop {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  width: 5vw;
+  height: 7vh;
+  margin-left: 0.8%;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  font-size: 120%;
+  border: 0;
+}
+
+#Timer {
+  border: 0;
+  width: 7vw;
+  font-size: 3vh;
+  text-align: center;
+  margin-top: 6%;
+  margin-left: 14%;
+}
+
+body {
+  background-color: #e7f4ff;
+}
