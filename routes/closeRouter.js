@@ -11,9 +11,10 @@ router.get('/', function(req, res) {
 });
 
 //신서유기 게임 page
-router.get('/sinseo', function(req, res, next) {
+router.get('/sinseo', async function(req, res, next) {
     try {
-        const sinseo = Sinseo.findAll();
+        const sinseo = await Sinseo.findAll();
+        console.log(sinseo);
         res.send(sinseo);
     } catch (err){
         console.err(err);
@@ -25,7 +26,6 @@ router.get('/sinseo', function(req, res, next) {
 router.get('/commonsense', async function(req, res, next) {
     try{
         const commonsense = await Commonsense.findAll();
-        //console.log("commonsense")
         res.send(commonsense);
     } catch(err){
         console.error(err);
@@ -35,9 +35,9 @@ router.get('/commonsense', async function(req, res, next) {
 
 //ranking 표시 및 등록
 router.route('/users/:category')
-    .get(function(req, res, next){ 
+    .get(async function(req, res, next){ 
         try{
-            const user = User.findAll({
+            const user = await User.findAll({
                 attributes: ['category', 'username', 'score'],
                 order: [['score', 'DESC']],
                 limit: 10
@@ -49,9 +49,9 @@ router.route('/users/:category')
         }
 
     })
-    .post((req, res, next) => { 
+    .post(async(req, res, next) => { 
         try{
-            const user = User.create({
+            const user = await User.create({
                 category : req.body.category,
                 username : req.body.username,
                 score : req.body.score,
