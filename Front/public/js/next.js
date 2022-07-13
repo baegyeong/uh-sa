@@ -18,16 +18,16 @@ const nextIntroduce = document.querySelector("#goIntroduce");
 
 function clickPeople() {
   inputPeople();
-  location.href = "../people_quiz/people_quiz_start/people_quiz_start.html";
+  location.href = "../html/people_quiz_start.html";
 }
 
 function clickBalance() {
   inputBalance();
-  location.href = "../balance/balance_start/balance_start.html";
+  location.href = "../html/balance_start.html";
 }
 
 function clickIntroduce() {
-  location.href = "../more_game/more_game.html";
+  location.href = "../html/more_game.html";
 }
 
 nextPeople.addEventListener("click", clickPeople);

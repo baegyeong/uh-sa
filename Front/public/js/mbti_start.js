@@ -1,6 +1,6 @@
 const bg = document.querySelector("#bg");
 function clickBg() {
-  location.href = "people_quiz.html";
+  location.href = "../html/mbti.html";
 }
 
 bg.addEventListener("click", clickBg);
