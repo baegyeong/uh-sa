@@ -6,14 +6,14 @@ const friendBtn = document.querySelector(".friend-btn");
 
 function clickKnow() {
   console.log("ddd");
-  location.href = "../mbti/mbti_start/mbti_start.html";
+  location.href = "../html/mbti_start.html";
 }
 function clickFriendly() {
   console.log("dss");
-  location.href = "../game_choice/game_choice.html";
+  location.href = "../html/game_choice.html";
 }
 function clickMore() {
-  location.href = "../more_game/more_game.html";
+  location.href = "../html/more_game.html";
 }
 
 know.addEventListener("click", clickKnow);
