@@ -37,10 +37,12 @@ router.get('/commonsense', async function(req, res, next) {
 router.route('/users/:category')
     .get(async function(req, res, next){ 
         try{
+            let category = req.params.category;
             const user = await User.findAll({
                 attributes: ['category', 'username', 'score'],
                 order: [['score', 'DESC']],
-                limit: 10
+                limit: 10,
+                where : { category },
               });
               res.send(user);                             
             } catch(err){
