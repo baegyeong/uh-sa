@@ -7,11 +7,28 @@ const  Commonsense  = require('../models/commonsense');
 
 //친해지길 바라 page (3개의 카테고리 중 선택)
 router.get('/', function(req, res) { 
-    res.send('<h1>It\'s time to close!</h1>');
+    res.render('game_choice');
+});
+
+//
+router.get('/sinseo', function(req, res) { 
+    res.render('people_quiz_start');
+});
+
+router.get('/sinseo/player', function(req, res) { 
+    res.render('player1');
+});
+
+router.get('/sinseo/help', function(req, res) { 
+    res.render('help');
+});
+
+router.get('/sinseo/peoplequiz', function(req, res) { 
+    res.render('people_quiz');
 });
 
 //신서유기 게임 page
-router.get('/sinseo', async function(req, res, next) {
+router.get('/api/sinseo', async function(req, res, next) {
     try {
         const sinseo = await Sinseo.findAll();
         console.log(sinseo);
@@ -23,7 +40,15 @@ router.get('/sinseo', async function(req, res, next) {
 });
 
 //상식 퀴즈 page
-router.get('/commonsense', async function(req, res, next) {
+router.get('/commonsense', function(req, res) { 
+    res.render('balance_start');
+});
+
+router.get('/commonsense/quiz', function(req, res) { 
+    res.render('balance');
+});
+
+router.get('/api/commonsense', async function(req, res, next) {
     try{
         const commonsense = await Commonsense.findAll();
         res.send(commonsense);
@@ -33,8 +58,13 @@ router.get('/commonsense', async function(req, res, next) {
     }
 });
 
+
 //ranking 표시 및 등록
-router.route('/users/:category')
+router.get('/users/:category', function(req, res) { 
+    res.render('ranking');
+});
+
+router.route('/api/users/:category')
     .get(async function(req, res, next){ 
         try{
             let category = req.params.category;
@@ -68,7 +98,7 @@ router.route('/users/:category')
 
 //더 많은 게임 page
 router.get('/moregame', function(req, res, next) {
-   //front
+   res.render('more_game');
 });
 
 module.exports = router;
