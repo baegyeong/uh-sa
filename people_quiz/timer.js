@@ -28,7 +28,6 @@ function clickBtn() {
     Stop.style.color = "#008bff";
   } else {
     setTime = setInterval(goTimeZero, 1000);
-
     Stop.innerText = "STOP";
     Stop.style.color = "red";
   }

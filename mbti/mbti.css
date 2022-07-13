@@ -84,6 +84,7 @@
   display: flex;
   bottom: 3%;
   right: 0%;
+  cursor: pointer;
 }
 .button img {
   max-width: 80%;

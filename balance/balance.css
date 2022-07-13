@@ -87,6 +87,7 @@
   margin-left: 14%;
 }
 #next {
+  cursor: pointer;
   position: fixed;
   float: right;
   display: flex;

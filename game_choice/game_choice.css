@@ -90,6 +90,7 @@
 }
 
 .next {
+  cursor: pointer;
   display: flex;
   justify-content: end;
   align-content: end;

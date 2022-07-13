@@ -31,6 +31,9 @@
   text-align: center;
   line-height: 70vh;
 }
+#bg {
+  cursor: pointer;
+}
 body {
   background-color: #e7f4ff;
 }

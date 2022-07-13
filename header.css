@@ -36,6 +36,7 @@ ol {
 }
 
 li {
+  cursor: pointer;
   color: #000000;
   display: inline;
   padding: 3%;
