@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 router.get('/sinseo', function(req, res, next) {
     try {
         const sinseo = Sinseo.findAll();
-        res.json(sinseo);
+        res.send(sinseo);
     } catch (err){
         console.err(err);
         next(err);
@@ -25,14 +25,13 @@ router.get('/sinseo', function(req, res, next) {
 router.get('/commonsense', async function(req, res, next) {
     try{
         const commonsense = await Commonsense.findAll();
-        console.log("commonsense")
-        res.json(commonsense);
+        //console.log("commonsense")
+        res.send(commonsense);
     } catch(err){
         console.error(err);
         next(err);
     }
 });
-
 
 //ranking 표시 및 등록
 router.route('/users/:category')
@@ -43,7 +42,7 @@ router.route('/users/:category')
                 order: [['score', 'DESC']],
                 limit: 10
               });
-              res.json(user);                             
+              res.send(user);                             
             } catch(err){
             console.error(err);
             next(err);
