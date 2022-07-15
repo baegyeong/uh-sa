@@ -40,6 +40,8 @@
   height: 60vh;
 }
 .name {
+  font-family: "NIXGONM-Vb";
+  font-size: 200%;
   transform: translate(-10%, 130%);
   display: none;
   justify-content: center;

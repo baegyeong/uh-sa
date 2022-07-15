@@ -1,8 +1,8 @@
-const close = document.querySelector("#close");
+const close = document.getElementById("#close");
 const gray = document.getElementsByClassName("gray");
 
 function clickClose() {
-  gray.classList.add("hidden");
+  console.log("dddd");
 }
 
 close.addEventListener("click", clickClose);
