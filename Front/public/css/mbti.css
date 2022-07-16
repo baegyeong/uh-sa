@@ -38,7 +38,7 @@
 }
 
 .question {
-  font-family: "NIXGONB-Vb";
+  font-family: "NIXGONM-Vb";
   font-size: 270%;
   color: #008bff;
   text-align: center;
@@ -48,20 +48,18 @@
 .choice {
   display: inline-block;
   height: 5%;
-  vertical-align: middle;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   font-family: "NIXGONB-Vb";
-  font-size: 150%;
+  font-size: 140%;
   position: absolute;
 }
-.choice:nth-child(3) {
-  margin-left: 22%;
-  line-height: 13vh;
+.left {
+  margin-left: 37%;
+  line-height: 14vh;
   float: left;
 }
-.choice:nth-child(2) {
-  margin-right: 23%;
+.right {
+  margin-right: 37%;
   float: right;
 }
 .vs {
@@ -71,8 +69,58 @@
 }
 .vs img {
   position: relative;
-  max-width: 45%;
-  max-height: 45%;
+  max-width: 72%;
+}
+
+#flip:hover #card {
+  transform: rotateY(180deg);
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: 0.4s;
+  transform-style: preserve-3d;
+}
+
+#commentary {
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+}
+#commentary,
+.container {
+  backface-visibility: hidden;
+}
+
+.explain,
+.comment {
+  font-family: "NIXGONM-Vb";
+  font-size: 16px;
+  width: 8vw;
+  height: 5vh;
+  border: 0;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: -4%;
+  transform: rotateY(180deg);
+}
+
+.comment {
+  color: #008bff;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 #move-button {
   display: flex;

@@ -3,19 +3,23 @@ const friend = document.querySelector(".go-friend");
 const more = document.querySelector(".go-more");
 const knowBtn = document.querySelector(".know-btn");
 const friendBtn = document.querySelector(".friend-btn");
+let home = document.querySelector(".home");
+
+function clickHome() {
+  location.href = "http://localhost:3000";
+}
 
 function clickKnow() {
-  console.log("ddd");
-  location.href = "../html/mbti_start.html";
+  location.href = "http://localhost:3000/app/";
 }
 function clickFriendly() {
-  console.log("dss");
-  location.href = "../html/game_choice.html";
+  location.href = "http://localhost:3000/close/";
 }
 function clickMore() {
-  location.href = "../html/more_game.html";
+  location.href = "http://localhost:3000/close/moregame";
 }
 
+home.addEventListener("click", clickHome);
 know.addEventListener("click", clickKnow);
 knowBtn.addEventListener("click", clickKnow);
 friend.addEventListener("click", clickFriendly);

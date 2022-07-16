@@ -27,7 +27,7 @@
   line-height: 13vh;
 }
 .title h1 {
-  font-family: "NIXGONM-Vb";
+  font-family: "NIXGONL-Vb";
   color: #008bff;
   font-size: 300%;
   margin: 1%;
@@ -51,11 +51,28 @@
   margin-right: 23%;
   float: right;
 }
+.question-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 14vh;
+  margin-right: 2%;
+  margin-bottom: 3%;
+}
+.question-mark img {
+  max-width: 50%;
+}
+.question {
+  font-family: "NIXGONL-Vb";
+  font-size: 250%;
+  color: #008bff;
+  text-align: center;
+  margin-left: 1%;
+}
 .vs {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65vh;
 }
 .vs img {
   position: relative;
@@ -66,7 +83,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -3%;
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .timer {

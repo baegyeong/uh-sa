@@ -1,8 +1,8 @@
-const close = document.querySelector("#close");
-const gray = document.getElementsByClassName("gray");
+const close = document.querySelector("#next");
 
 function clickClose() {
-  gray.classList.add("hidden");
+  console.log("dfds");
+  location.href = "http://localhost:3000/close/sinseo/peoplequiz";
 }
 
 close.addEventListener("click", clickClose);
