@@ -63,6 +63,10 @@ router.get("/users/:category", function (req, res) {
   res.render("ranking");
 });
 
+router.get("/ranking_save", function (req, res) {
+  res.render("ranking_save");
+});
+
 router
   .route("/api/users/:category")
   .get(async function (req, res, next) {

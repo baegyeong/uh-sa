@@ -50,15 +50,7 @@
 .choice:nth-child(2) {
   margin-right: 23%;
   float: right;
-} /*
-.question-mark {
-  position: absolute;
-  top: 37%;
-  left: 39%;
-  transform: translate(-50%, -50%);
 }
-
-}*/
 .question-mark {
   display: flex;
   justify-content: center;

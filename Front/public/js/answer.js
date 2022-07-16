@@ -1,22 +1,25 @@
 const timer = document.querySelector("#Timer");
 const name = document.querySelector(".name");
 const Stop = document.querySelector(".stop");
-const number = Math.floor(Math.random() * 10);
+const number = Math.floor(Math.random() * 30);
 // 타이머 설정 및 0초 시 정답 띄우기
 let time = 2;
 let sec = "";
 timer.innerText = "00" + ":0" + "3";
 
 let goTimeZero = function () {
-  sec = time;
-  timer.innerText = "00" + ":0" + sec;
-  time--;
+  if (time > -1) {
+    sec = time;
+    timer.innerText = "00" + ":0" + sec;
+    time--;
+  }
   if (time === -1) {
     name.style.display = "flex";
     function answer() {
       const config = {
         method: "get",
       };
+      // document.getElementById("peopleQuizImg").style.display = "none";
 
       fetch("http://localhost:3000/close/api/sinseo", config)
         .then((res) => res.json())
@@ -62,17 +65,7 @@ document.onkeydown = function (e) {
       score += 1;
       localStorage.setItem("SCORE", score);
   }
-}; /*
-let sinseo;
-window.addEventListener("load", function () {
-  sinseo = fetch("http://localhost:3000/close/api/sinseo")
-    .then((res) => res.text())
-    .then((res) => {
-      Datas = JSON.parse(res);
-      return Datas;
-    });
-});
-*/
+};
 function getPic() {
   const config = {
     method: "get",
@@ -81,11 +74,12 @@ function getPic() {
   fetch("http://localhost:3000/close/api/sinseo", config)
     .then((res) => res.json())
     .then((data) => {
-      const image = document.createElement("div");
-      image.innerHTML = data[number].image;
+      const image = document.createElement("img");
+      image.src = data[number].image;
+      image.id = "peopleQuizImg";
+      //   image.style.transform = "translate(14%, 61%)";
       const quizImg = document.querySelector(".img");
       quizImg.appendChild(image);
-      console.log(data[number].image);
     })
     .catch((error) => console.log("fetch 에러!"));
 }
