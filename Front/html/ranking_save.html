@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/balance.css" />
+    <link rel="stylesheet" href="/css/ranking_save.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <title>친해지길 바라</title>
   </head>
@@ -23,6 +23,30 @@
         </div>
       </div>
     </div>
-    <div></div>
+    <div id="score">
+      <div class="score-name">점수</div>
+      <div class="total-score">
+        <span>5</span>
+        <div class="score-num">/7</div>
+      </div>
+    </div>
+    <div id="ranking-save">
+      <div id="question-ranking">랭킹에 저장하시겠습니까?</div>
+      <div class="input-num">
+        <img src="/img/group.png" />
+        <input
+          id="people"
+          type="number"
+          required
+          min="1"
+          max="10"
+          placeholder="이름"
+        />
+      </div>
+    </div>
+    <div class="save-skip">
+      <button class="button">저장</button>
+      <button class="button">건너뛰기</button>
+    </div>
   </body>
 </html>
