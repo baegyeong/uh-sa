@@ -1,6 +1,6 @@
 const bg = document.querySelector("#bg");
 function clickBg() {
-  location.href = "../html/player1.html";
+  location.href = "http://localhost:3000/close/sinseo/player";
 }
 
 bg.addEventListener("click", clickBg);

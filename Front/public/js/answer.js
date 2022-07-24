@@ -1,7 +1,7 @@
 const timer = document.querySelector("#Timer");
 const name = document.querySelector(".name");
 const Stop = document.querySelector(".stop");
-const number = Math.floor(Math.random() * 30);
+
 // 타이머 설정 및 0초 시 정답 띄우기
 let time = 2;
 let sec = "";
@@ -15,28 +15,24 @@ let goTimeZero = function () {
   }
   if (time === -1) {
     name.style.display = "flex";
-    function answer() {
-      const config = {
-        method: "get",
-      };
-      // document.getElementById("peopleQuizImg").style.display = "none";
-
-      fetch("http://localhost:3000/close/api/sinseo", config)
-        .then((res) => res.json())
-        .then((data) => {
-          const answer = document.createElement("div");
-          answer.innerHTML = data[number].answer;
-          const quizName = document.querySelector(".name");
-          quizName.appendChild(answer);
-        })
-        .catch((error) => console.log("fetch 에러!"));
-    }
-    answer();
-
     clearInterval(setTime);
   }
 };
-
+// 정답 이름 가져오기
+function answer() {
+  fetch("http://localhost:3000/close/api/sinseo")
+    .then((res) => res.json())
+    .then((data) => {
+      const quizName = document.querySelector(".name");
+      const answer = document.createElement("div");
+      quizName.appendChild(answer);
+      answer.innerText = data[num].answer;
+    })
+    .catch(() => console.log("fetch 에러!"));
+}
+if (time === -1) {
+  answer();
+}
 let setTime = setInterval(goTimeZero, 1000);
 
 // stop 버튼을 통해 타이머, 정답화면 제어
@@ -55,32 +51,46 @@ function clickBtn() {
 
 Stop.addEventListener("click", clickBtn);
 
-const rightZone = document.querySelector;
+// 사진 띄우기
+let count = 30;
 
-let score = 0;
+let num = Math.floor(Math.random() * count);
+const image = document.createElement("img");
+const quizImg = document.querySelector(".img");
 
-document.onkeydown = function (e) {
-  switch (e.key) {
-    case "ArrowLeft":
-      score += 1;
-      localStorage.setItem("SCORE", score);
-  }
-};
-function getPic() {
-  const config = {
-    method: "get",
-  };
-
-  fetch("http://localhost:3000/close/api/sinseo", config)
+function getPic(num) {
+  fetch("http://localhost:3000/close/api/sinseo")
     .then((res) => res.json())
     .then((data) => {
-      const image = document.createElement("img");
-      image.src = data[number].image;
-      image.id = "peopleQuizImg";
-      //   image.style.transform = "translate(14%, 61%)";
-      const quizImg = document.querySelector(".img");
+      image.src = data[num].image;
       quizImg.appendChild(image);
     })
-    .catch((error) => console.log("fetch 에러!"));
+    .catch(() => console.log("fetch 에러!"));
 }
-getPic();
+getPic(num);
+//image.id = "peopleQuizImg";
+
+// 키보드 방향키로 정답 입력 및 다음 퀴즈
+let score = 0;
+
+document.addEventListener("keydown", checkKeyPressed, false);
+
+function checkKeyPressed(e) {
+  if (e.keyCode === 37) {
+    console.log("left");
+    score += 1;
+    localStorage.setItem("SCORE", score);
+  }
+  if (e.keyCode === 39) {
+    console.log("right");
+  }
+  num = Math.floor(Math.random() * count);
+  name.style.display = "none";
+  getPic(num);
+  answer.innerText = "";
+  time = 2;
+  sec = "";
+  timer.innerText = "00" + ":0" + "3";
+  setInterval(goTimeZero, 1000);
+  // answer.innerHTML = none;
+}

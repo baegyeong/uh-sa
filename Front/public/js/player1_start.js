@@ -1,6 +1,6 @@
 const bg = document.querySelector("#bg");
 function clickBg() {
-  location.href = "../html/people_quiz.html";
+  location.href = "http://localhost:3000/close/sinseo/peoplequiz";
 }
 
 bg.addEventListener("click", clickBg);

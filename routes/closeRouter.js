@@ -41,11 +41,11 @@ router.get("/api/sinseo", async function (req, res, next) {
 
 //상식 퀴즈 page
 router.get("/commonsense", function (req, res) {
-  res.render("balance_start");
+  res.render("commonsense_start");
 });
 
 router.get("/commonsense/quiz", function (req, res) {
-  res.render("balance");
+  res.render("commonsense");
 });
 
 router.get("/api/commonsense", async function (req, res, next) {
