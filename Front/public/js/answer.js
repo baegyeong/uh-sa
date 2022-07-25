@@ -18,21 +18,6 @@ let goTimeZero = function () {
     clearInterval(setTime);
   }
 };
-// 정답 이름 가져오기
-function answer() {
-  fetch("http://localhost:3000/close/api/sinseo")
-    .then((res) => res.json())
-    .then((data) => {
-      const quizName = document.querySelector(".name");
-      const answer = document.createElement("div");
-      quizName.appendChild(answer);
-      answer.innerText = data[num].answer;
-    })
-    .catch(() => console.log("fetch 에러!"));
-}
-if (time === -1) {
-  answer();
-}
 let setTime = setInterval(goTimeZero, 1000);
 
 // stop 버튼을 통해 타이머, 정답화면 제어
@@ -51,46 +36,73 @@ function clickBtn() {
 
 Stop.addEventListener("click", clickBtn);
 
-// 사진 띄우기
-let count = 30;
-
+// 중복 없는 배열 만들기
+let count = 36;
 let num = Math.floor(Math.random() * count);
+let arr = [];
+
+function makeArr() {
+  let i = 0;
+  while (i < 5) {
+    num = Math.floor(Math.random() * count);
+    if (!sameNum(num)) {
+      arr.push(num);
+      i++;
+    }
+  }
+  console.log(arr);
+}
+makeArr();
+
+function sameNum(n) {
+  for (var i = 0; i < arr.length; i++) {
+    if (n === arr[i]) {
+      return true;
+    }
+  }
+  return false;
+}
+// 사진 띄우기
 const image = document.createElement("img");
 const quizImg = document.querySelector(".img");
+quizImg.appendChild(image);
+const quizName = document.querySelector(".name");
+const answer = document.createElement("div");
+quizName.appendChild(answer);
 
 function getPic(num) {
   fetch("http://localhost:3000/close/api/sinseo")
     .then((res) => res.json())
     .then((data) => {
       image.src = data[num].image;
-      quizImg.appendChild(image);
+      answer.innerText = data[num].answer;
     })
     .catch(() => console.log("fetch 에러!"));
 }
-getPic(num);
-//image.id = "peopleQuizImg";
+getPic(arr[num]);
 
 // 키보드 방향키로 정답 입력 및 다음 퀴즈
+let order = 0;
+getPic(arr[0]);
 let score = 0;
-
-document.addEventListener("keydown", checkKeyPressed, false);
-
-function checkKeyPressed(e) {
+window.addEventListener("keydown", (e) => {
   if (e.keyCode === 37) {
-    console.log("left");
     score += 1;
-    localStorage.setItem("SCORE", score);
+    console.log("left");
   }
   if (e.keyCode === 39) {
     console.log("right");
   }
-  num = Math.floor(Math.random() * count);
   name.style.display = "none";
-  getPic(num);
   answer.innerText = "";
   time = 2;
   sec = "";
   timer.innerText = "00" + ":0" + "3";
-  setInterval(goTimeZero, 1000);
-  // answer.innerHTML = none;
-}
+  setTime = setInterval(goTimeZero, 1000);
+  if (order < 6) order++;
+  getPic(arr[order]);
+  if (order === 5) location.href = "http://localhost:3000/close/ranking_save";
+  //console.log(order);
+  console.log(score);
+  localStorage.setItem("SCORE", score);
+});

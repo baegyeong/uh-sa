@@ -19,6 +19,9 @@
   font-weight: normal;
   font-style: normal;
 }
+.hidden {
+  display: none;
+}
 .nav {
   background-color: #ffffff;
 }
@@ -106,7 +109,16 @@
   margin-top: 6%;
   margin-left: 14%;
 }
-#next {
+.answer {
+  position: absolute;
+  top: 58%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+}
+.answer img {
+  width: 200%;
+}
+/* #next {
   cursor: pointer;
   position: fixed;
   float: right;
@@ -117,7 +129,7 @@
 #next img {
   max-width: 80%;
   max-height: 80%;
-}
+} */
 
 body {
   background-color: #e7f4ff;

@@ -26,22 +26,15 @@
     <div id="score">
       <div class="score-name">점수</div>
       <div class="total-score">
-        <span>5</span>
-        <div class="score-num">/7</div>
+        <span></span>
+        <div class="score-num">/5</div>
       </div>
     </div>
     <div id="ranking-save">
       <div id="question-ranking">랭킹에 저장하시겠습니까?</div>
       <div class="input-num">
         <img src="/img/group.png" />
-        <input
-          id="people"
-          type="number"
-          required
-          min="1"
-          max="10"
-          placeholder="이름"
-        />
+        <input id="people" type="text" required placeholder="이름" />
       </div>
     </div>
     <div class="save-skip">
@@ -49,5 +42,6 @@
       <button class="button">건너뛰기</button>
     </div>
     <script src="/js/move.js"></script>
+    <script src="/js/ranking_save.js"></script>
   </body>
 </html>
