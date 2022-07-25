@@ -6,8 +6,8 @@ function clickBg() {
 bg.addEventListener("click", clickBg);
 const player = document.querySelector("h1");
 let num = localStorage.getItem("peopleNum");
-let i = 1;
+let i = 0;
 window.addEventListener("load", () => {
-  player.innerText = "player" + `${i}`;
   i++;
+  player.innerText = "player" + `${i}`;
 });

@@ -16,7 +16,7 @@ router.get("/sinseo", function (req, res) {
 });
 
 router.get("/sinseo/player", function (req, res) {
-  res.render("player1");
+  res.render("people_quiz_player");
 });
 
 router.get("/sinseo/help", function (req, res) {
@@ -43,7 +43,9 @@ router.get("/api/sinseo", async function (req, res, next) {
 router.get("/commonsense", function (req, res) {
   res.render("commonsense_start");
 });
-
+router.get("/commonsense/player", function (req, res) {
+  res.render("commonsense_player");
+});
 router.get("/commonsense/quiz", function (req, res) {
   res.render("commonsense");
 });
