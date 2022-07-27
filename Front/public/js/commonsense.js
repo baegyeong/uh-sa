@@ -17,6 +17,10 @@ let goTimeZero = function () {
     }, 500);
     order++;
     getQuestion(arr[order]);
+    time = 9;
+    sec = "";
+    timer.innerText = "00" + ":" + "10";
+    setTime = setInterval(goTimeZero, 1000);
   }
 };
 let setTime = setInterval(goTimeZero, 1000);
@@ -104,7 +108,7 @@ let arr = [];
 
 function makeArr() {
   let i = 0;
-  while (i < 5) {
+  while (i < people * 5) {
     num = Math.floor(Math.random() * count);
     if (!sameNum(num)) {
       arr.push(num);
@@ -125,31 +129,30 @@ function sameNum(n) {
 }
 
 // 키보드 방향키로 정답 입력 및 다음 퀴즈
+const player = localStorage.getItem("PLAYER");
 let order = 0;
-getQuestion(arr[0]);
+getQuestion(arr[0 + 5 * (player - 1)]);
 
 window.addEventListener("keydown", (e) => {
   clearInterval(setTime);
   if (e.keyCode === 37) {
-    compareLeft(arr[order]);
+    compareLeft(arr[order + 5 * (player - 1)]);
     console.log("left");
-  }
-  if (e.keyCode === 39) {
-    compareRight(arr[order]);
+  } else if (e.keyCode === 39) {
+    compareRight(arr[order + 5 * (player - 1)]);
     console.log("right");
   }
-  if (order < 6) order++;
-  getQuestion(arr[order]);
+
+  if (order < 5) order++;
+  getQuestion(arr[order + 5 * (player - 1)]);
   time = 9;
   sec = "";
   timer.innerText = "00" + ":" + "10";
-  setTime = setInterval(function () {
-    sec = time;
-    timer.innerText = "00" + ":0" + sec;
-    time--;
-  }, 1000);
+  setTime = setInterval(goTimeZero, 1000);
 
-  if (order === 5) location.href = "http://localhost:3000/close/ranking_save";
+  if (order === 4) {
+    location.href = "http://localhost:3000/close/ranking_save";
+  }
   //console.log(order);
   console.log(score);
   localStorage.setItem("SCORE", score);

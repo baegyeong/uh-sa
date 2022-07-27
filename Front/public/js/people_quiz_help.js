@@ -1,8 +1,7 @@
 const close = document.querySelector("#next");
 
 function clickClose() {
-  console.log("dfds");
-  location.href = "http://localhost:3000/close/sinseo/peoplequiz";
+  location.href = "http://localhost:3000/close/sinseo/player";
 }
 
 close.addEventListener("click", clickClose);

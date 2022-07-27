@@ -20,7 +20,7 @@ router.get("/sinseo/player", function (req, res) {
 });
 
 router.get("/sinseo/help", function (req, res) {
-  res.render("help");
+  res.render("people_quiz_help");
 });
 
 router.get("/sinseo/peoplequiz", function (req, res) {
@@ -89,12 +89,12 @@ router
   .post(async (req, res, next) => {
     try {
       const user = await User.create({
-        category: req.body.category,
+        category: req.params.category,
         username: req.body.username,
         score: req.body.score,
       });
       console.log(user);
-      res.status(201).json(user);
+      res.status(201).send(user);
     } catch (err) {
       console.error(err);
       next(err);

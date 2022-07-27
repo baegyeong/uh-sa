@@ -37,13 +37,17 @@ function clickBtn() {
 Stop.addEventListener("click", clickBtn);
 
 // 중복 없는 배열 만들기
-let count = 36;
-let num = Math.floor(Math.random() * count);
+let count = 40;
+let totalARr = [];
 let arr = [];
+let arrNum = 1;
+let num = Math.floor(Math.random() * count);
+
+let peopleNum = localStorage.getItem("peopleNum");
 
 function makeArr() {
   let i = 0;
-  while (i < 5) {
+  while (i < peopleNum * 5) {
     num = Math.floor(Math.random() * count);
     if (!sameNum(num)) {
       arr.push(num);
@@ -69,7 +73,7 @@ quizImg.appendChild(image);
 const quizName = document.querySelector(".name");
 const answer = document.createElement("div");
 quizName.appendChild(answer);
-
+const player = localStorage.getItem("PLAYER");
 function getPic(num) {
   fetch("http://localhost:3000/close/api/sinseo")
     .then((res) => res.json())
@@ -79,18 +83,16 @@ function getPic(num) {
     })
     .catch(() => console.log("fetch 에러!"));
 }
-getPic(arr[num]);
 
 // 키보드 방향키로 정답 입력 및 다음 퀴즈
 let order = 0;
-getPic(arr[0]);
+getPic(arr[0 + 5 * (player - 1)]);
 let score = 0;
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 37) {
     score += 1;
     console.log("left");
-  }
-  if (e.keyCode === 39) {
+  } else if (e.keyCode === 39) {
     console.log("right");
   }
   name.style.display = "none";
@@ -99,9 +101,10 @@ window.addEventListener("keydown", (e) => {
   sec = "";
   timer.innerText = "00" + ":0" + "3";
   setTime = setInterval(goTimeZero, 1000);
-  if (order < 6) order++;
-  getPic(arr[order]);
-  if (order === 5) location.href = "http://localhost:3000/close/ranking_save";
+  if (order === 4) location.href = "http://localhost:3000/close/ranking_save";
+  if (order < 5) order++;
+  getPic(arr[order + 5 * (player - 1)]);
+
   //console.log(order);
   console.log(score);
   localStorage.setItem("SCORE", score);

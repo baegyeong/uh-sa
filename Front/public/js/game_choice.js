@@ -1,5 +1,5 @@
 const people = document.querySelector("#people");
-const balance = document.querySelector("#commonsense");
+const commonsense = document.querySelector("#commonsense");
 const PEOPLE_KEY = "peopleNum";
 const COMMONSENSE_NUM = "commonsenseNum";
 
@@ -14,11 +14,12 @@ function inputCommonsense() {
 const nextPeople = document.querySelector("#go-people");
 const nextCommonsense = document.querySelector("#go-commonsense");
 const nextIntroduce = document.querySelector("#go-introduce");
-
+let player = 0;
 function clickPeople() {
   if (people.value !== "") {
     inputPeople();
     location.href = "http://localhost:3000/close/sinseo";
+    localStorage.setItem("PLAYER", player);
   } else {
     alert("인원 수를 입력하세요.");
   }
@@ -27,10 +28,12 @@ function clickCommonsense() {
   if (commonsense.value !== "") {
     inputCommonsense();
     location.href = "http://localhost:3000/close/commonsense";
+    localStorage.setItem("PLAYER", player);
   } else {
     alert("인원 수를 입력하세요.");
   }
 }
+
 function clickIntroduce() {
   location.href = "http://localhost:3000/close/moregame";
 }
