@@ -67,7 +67,6 @@ saveButton.addEventListener("click", () => {
   Commonsense();
 });
 skipButton.addEventListener("click", () => {
-  showRanking();
   Sinseo();
   Commonsense();
 });

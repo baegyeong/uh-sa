@@ -50,13 +50,15 @@ function getQuestion(num) {
     .catch(() => console.log("fetch 에러!"));
 }
 let score = 0;
+localStorage.setItem("SCORE", score);
 // 왼쪽 선택지가 정답일 때
 function compareLeft(num) {
   fetch("http://localhost:3000/close/api/commonsense")
     .then((res) => res.json())
     .then((data) => {
       if (data[num].answer === data[num].choice1) {
-        score += 1;
+        score++;
+        localStorage.setItem("SCORE", score);
         setTimeout(correct.classList.remove("hidden"), 250);
         setTimeout(function () {
           clearInterval(correct.classList.add("hidden"));
@@ -78,7 +80,8 @@ function compareRight(num) {
     .then((res) => res.json())
     .then((data) => {
       if (data[num].answer === data[num].choice2) {
-        score += 1;
+        score++;
+        localStorage.setItem("SCORE", score);
         setTimeout(correct.classList.remove("hidden"), 250);
         setTimeout(function () {
           clearInterval(correct.classList.add("hidden"));
@@ -150,10 +153,10 @@ window.addEventListener("keydown", (e) => {
   timer.innerText = "00" + ":" + "10";
   setTime = setInterval(goTimeZero, 1000);
 
-  if (order === 4) {
+  if (order === 5) {
     location.href = "http://localhost:3000/close/ranking_save";
   }
   //console.log(order);
-  console.log(score);
-  localStorage.setItem("SCORE", score);
+  console.log(localStorage.getItem("SCORE"));
+  // localStorage.setItem("SCORE", score);
 });

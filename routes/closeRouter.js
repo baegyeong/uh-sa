@@ -46,6 +46,9 @@ router.get("/commonsense", function (req, res) {
 router.get("/commonsense/player", function (req, res) {
   res.render("commonsense_player");
 });
+router.get("/commonsense/help", function (req, res) {
+  res.render("commonsense_help");
+});
 router.get("/commonsense/quiz", function (req, res) {
   res.render("commonsense");
 });
@@ -96,6 +99,7 @@ router
       console.log(user);
       res.status(201).send(user);
     } catch (err) {
+      console.log(err);
       console.error(err);
       next(err);
     }
