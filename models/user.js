@@ -6,7 +6,7 @@ module.exports = class User extends Sequelize.Model {
       category: {
         type: DataTypes.STRING(20),
         allowNull: false,
-        unique: true,
+        unique: false,
       },
       username: {
         type: DataTypes.STRING(20),
