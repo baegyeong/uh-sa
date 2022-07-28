@@ -1,7 +1,7 @@
 const timer = document.querySelector("#Timer");
 const name = document.querySelector(".name");
 const Stop = document.querySelector(".stop");
-const number = Math.floor(Math.random() * 30);
+
 // 타이머 설정 및 0초 시 정답 띄우기
 let time = 2;
 let sec = "";
@@ -15,28 +15,9 @@ let goTimeZero = function () {
   }
   if (time === -1) {
     name.style.display = "flex";
-    function answer() {
-      const config = {
-        method: "get",
-      };
-      // document.getElementById("peopleQuizImg").style.display = "none";
-
-      fetch("http://localhost:3000/close/api/sinseo", config)
-        .then((res) => res.json())
-        .then((data) => {
-          const answer = document.createElement("div");
-          answer.innerHTML = data[number].answer;
-          const quizName = document.querySelector(".name");
-          quizName.appendChild(answer);
-        })
-        .catch((error) => console.log("fetch 에러!"));
-    }
-    answer();
-
     clearInterval(setTime);
   }
 };
-
 let setTime = setInterval(goTimeZero, 1000);
 
 // stop 버튼을 통해 타이머, 정답화면 제어
@@ -54,33 +35,50 @@ function clickBtn() {
 }
 
 Stop.addEventListener("click", clickBtn);
+let array = localStorage.getItem("arraySinseo");
+let arr = JSON.parse(array);
+console.log(arr);
 
-const rightZone = document.querySelector;
-
-let score = 0;
-
-document.onkeydown = function (e) {
-  switch (e.key) {
-    case "ArrowLeft":
-      score += 1;
-      localStorage.setItem("SCORE", score);
-  }
-};
-function getPic() {
-  const config = {
-    method: "get",
-  };
-
-  fetch("http://localhost:3000/close/api/sinseo", config)
+// 사진 띄우기
+const image = document.createElement("img");
+const quizImg = document.querySelector(".img");
+quizImg.appendChild(image);
+const quizName = document.querySelector(".name");
+const answer = document.createElement("div");
+quizName.appendChild(answer);
+const player = localStorage.getItem("PLAYER");
+function getPic(num) {
+  fetch("http://localhost:3000/close/api/sinseo")
     .then((res) => res.json())
     .then((data) => {
-      const image = document.createElement("img");
-      image.src = data[number].image;
-      image.id = "peopleQuizImg";
-      //   image.style.transform = "translate(14%, 61%)";
-      const quizImg = document.querySelector(".img");
-      quizImg.appendChild(image);
+      image.src = data[num].image;
+      answer.innerText = data[num].answer;
     })
-    .catch((error) => console.log("fetch 에러!"));
+    .catch(() => console.log("fetch 에러!"));
 }
-getPic();
+
+// 키보드 방향키로 정답 입력 및 다음 퀴즈
+let order = 0;
+getPic(arr[0 + 5 * (player - 1)]);
+let score = 0;
+window.addEventListener("keydown", (e) => {
+  if (e.keyCode === 37) {
+    score += 1;
+    console.log("left");
+  } else if (e.keyCode === 39) {
+    console.log("right");
+  }
+  name.style.display = "none";
+  answer.innerText = "";
+  time = 2;
+  sec = "";
+  timer.innerText = "00" + ":0" + "3";
+  setTime = setInterval(goTimeZero, 1000);
+  if (order === 4) location.href = "http://localhost:3000/close/ranking_save";
+  if (order < 5) order++;
+  getPic(arr[order + 5 * (player - 1)]);
+  console.log(arr[order + 5 * (player - 1)]);
+  //console.log(order);
+  console.log(score);
+  localStorage.setItem("SCORE", score);
+});

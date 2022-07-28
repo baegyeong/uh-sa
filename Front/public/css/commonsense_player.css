@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "NIXGONB-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONB-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONL-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONL-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NIXGONM-Vb";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  background-color: #ffffff;
+  height: 11vh;
+}
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "NIXGONB-Vb";
+  color: #008bff;
+  font-size: 150%;
+  text-align: center;
+
+  /* line-height: 70vh; */
+}
+#bg {
+  cursor: pointer;
+  height: 89vh;
+}
+body {
+  background-color: #e7f4ff;
+}

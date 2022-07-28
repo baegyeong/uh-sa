@@ -3,13 +3,13 @@ const friendly = document.querySelector("#friendly");
 const more = document.querySelector("#more");
 
 function clickKnow() {
-  location.href = "../html/mbti_start.html";
+  location.href = "http://localhost:3000/app/";
 }
 function clickFriendly() {
-  location.href = "../html/game_choice.html";
+  location.href = "http://localhost:3000/close/";
 }
 function clickMore() {
-  location.href = "../html/more_game.html";
+  location.href = "http://localhost:3000/close/moregame";
 }
 
 know.addEventListener("click", clickKnow);

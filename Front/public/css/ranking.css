@@ -39,10 +39,10 @@
   gap: 0px 90px;
   grid-template-rows: repeat(1, 120px);
   margin: 2% 7%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
-.container1 img {
+.medal {
   transform: translate(73%, -55%);
   max-width: 40%;
 }
@@ -53,6 +53,76 @@
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+.second-img {
+  position: absolute;
+  top: 36%;
+  left: 35.4%;
+  width: 47px;
+}
+.third-img {
+  position: absolute;
+  top: 36%;
+  left: 61.5%;
+  width: 47px;
+}
+.img {
+  height: 25px;
+  vertical-align: middle;
+}
+.first-img {
+  position: absolute;
+  top: 55%;
+  left: -3%;
+}
+
+.post {
+  margin-top: 19%;
+  display: flex;
+  flex-direction: column;
+}
+.post div {
+  color: #008bff;
+  text-align: center;
+}
+.name {
+  font-family: "NIXGONM-Vb";
+  font-size: 20px;
+}
+.score {
+  font-family: "NIXGONB-Vb";
+  font-size: 18px;
+}
+.line {
+  color: #008bff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  line-height: 100%;
+  font-size: 20px;
+  line-height: 5.5vh;
+}
+.ranking {
+  font-family: "NIXGONB-Vb";
+  width: 18%;
+  text-align: left;
+  padding-left: 7%;
+}
+.animal {
+  width: 66%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  line-height: 100%;
+  font-family: "NIXGONM-Vb";
+}
+
+.score-line {
+  font-family: "NIXGONM-Vb";
+  display: flex;
+  align-items: center;
+  text-align: center;
+  line-height: 100%;
 }
 
 #winner {

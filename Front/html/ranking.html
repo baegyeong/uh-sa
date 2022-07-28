@@ -6,7 +6,7 @@
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/ranking.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <title>친해지길 바라</title>
+    <title>랭킹</title>
   </head>
   <body>
     <div class="header">
@@ -14,9 +14,9 @@
         <img style="cursor: pointer" class="logo home" src="/img/logo.png" />
         <h3 class="home">친해지길 바라</h3>
         <ol>
-          <li id="know">알아가기</li>
-          <li id="friendly">친해지기</li>
-          <li id="more">더 많은 게임</li>
+          <li class="go-know">알아가기</li>
+          <li class="go-friend">친해지기</li>
+          <li class="go-more">더 많은 게임</li>
         </ol>
         <div class="title">
           <h1>🏆RANKING🏆</h1>
@@ -25,13 +25,28 @@
     </div>
     <div class="container1">
       <div class="item hidden">
-        <img src="/img/2nd.png" />
+        <img class="medal" src="/img/2nd.png" />
+        <img class="second-img common" />
       </div>
       <div id="winner" class="item hidden">
-        <img src="/img/1st.png" />
+        <img class="medal" src="/img/1st.png" />
+        <img class="first-img common" />
       </div>
       <div class="item hidden">
-        <img src="/img/3rd.png" />
+        <img class="medal" src="/img/3rd.png" />
+        <img class="third-img common" />
+      </div>
+      <div class="post">
+        <div class="name" id="second"></div>
+        <div class="score"></div>
+      </div>
+      <div class="post">
+        <div class="name" id="first"></div>
+        <div class="score"></div>
+      </div>
+      <div class="post">
+        <div class="name" id="third"></div>
+        <div class="score"></div>
       </div>
     </div>
     <div class="container2">
@@ -40,15 +55,78 @@
         <div class="navName">PLAYER</div>
         <div class="navName">점수</div>
       </div>
-      <div class="item hidden"></div>
-      <div class="item hidden"></div>
-      <div class="item hidden"></div>
-      <div class="item hidden"></div>
-      <div class="item hidden"></div>
-      <div class="item hidden"></div>
-      <div class="item hidden"></div>
+      <div class="item hidden">
+        <div class="line">
+          <div class="ranking"></div>
+          <div class="animal">
+            <img class="img common" />
+            <span class="name-line"></span>
+          </div>
+          <div class="score-line score"></div>
+        </div>
+      </div>
+      <div class="item hidden">
+        <div class="line">
+          <div class="ranking"></div>
+          <div class="animal">
+            <img class="img common" />
+            <span class="name-line"></span>
+          </div>
+          <div class="score-line score"></div>
+        </div>
+      </div>
+      <div class="item hidden">
+        <div class="line">
+          <div class="ranking"></div>
+          <div class="animal">
+            <img class="img common" />
+            <span class="name-line"></span>
+          </div>
+          <div class="score-line score"></div>
+        </div>
+      </div>
+      <div class="item hidden">
+        <div class="line">
+          <div class="ranking"></div>
+          <div class="animal">
+            <img class="img common" />
+            <span class="name-line"></span>
+          </div>
+          <div class="score-line score"></div>
+        </div>
+      </div>
+      <div class="item hidden">
+        <div class="line">
+          <div class="ranking"></div>
+          <div class="animal">
+            <img class="img common" />
+            <span class="name-line"></span>
+          </div>
+          <div class="score-line score"></div>
+        </div>
+      </div>
+      <div class="item hidden">
+        <div class="line">
+          <div class="ranking"></div>
+          <div class="animal">
+            <img class="img common" />
+            <span class="name-line"></span>
+          </div>
+          <div class="score-line score"></div>
+        </div>
+      </div>
+      <div class="item hidden">
+        <div class="line">
+          <div class="ranking"></div>
+          <div class="animal">
+            <img class="img common" />
+            <span class="name-line"></span>
+          </div>
+          <div class="score-line score"></div>
+        </div>
+      </div>
     </div>
-    <script src="/js/ranking.js"></script>
-    <script src="/js/prototype.js"></script>
+    <script src="/js/move.js"></script>
   </body>
+  <script src="/js/ranking.js"></script>
 </html>

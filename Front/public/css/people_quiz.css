@@ -38,7 +38,8 @@
   left: 0%;
   margin: 4%;
   margin-bottom: 3%;
-  border: 2px solid black;
+  border: none;
+  /* border: 2px solid black; */
   width: 20vw;
   height: 60vh;
 }
