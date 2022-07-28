@@ -104,32 +104,9 @@ function nextQuiz(obj, num) {
   choice2.innerText = obj[num].choice2;
 }
 
-// 중복 없는 배열 만들기
-let count = 30;
-let num = Math.floor(Math.random() * count);
-let arr = [];
-
-function makeArr() {
-  let i = 0;
-  while (i < people * 5) {
-    num = Math.floor(Math.random() * count);
-    if (!sameNum(num)) {
-      arr.push(num);
-      i++;
-    }
-  }
-  console.log(arr);
-}
-makeArr();
-
-function sameNum(n) {
-  for (var i = 0; i < arr.length; i++) {
-    if (n === arr[i]) {
-      return true;
-    }
-  }
-  return false;
-}
+let array = localStorage.getItem("arrayCommon");
+let arr = JSON.parse(array);
+console.log(arr);
 
 // 키보드 방향키로 정답 입력 및 다음 퀴즈
 const player = localStorage.getItem("PLAYER");
@@ -140,10 +117,14 @@ window.addEventListener("keydown", (e) => {
   clearInterval(setTime);
   if (e.keyCode === 37) {
     compareLeft(arr[order + 5 * (player - 1)]);
-    console.log("left");
+    if (order === 5) {
+      location.href = "http://localhost:3000/close/ranking_save";
+    }
   } else if (e.keyCode === 39) {
     compareRight(arr[order + 5 * (player - 1)]);
-    console.log("right");
+    if (order === 5) {
+      location.href = "http://localhost:3000/close/ranking_save";
+    }
   }
 
   if (order < 5) order++;
@@ -156,7 +137,5 @@ window.addEventListener("keydown", (e) => {
   if (order === 5) {
     location.href = "http://localhost:3000/close/ranking_save";
   }
-  //console.log(order);
   console.log(localStorage.getItem("SCORE"));
-  // localStorage.setItem("SCORE", score);
 });

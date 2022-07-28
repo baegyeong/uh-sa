@@ -35,37 +35,10 @@ function clickBtn() {
 }
 
 Stop.addEventListener("click", clickBtn);
+let array = localStorage.getItem("arraySinseo");
+let arr = JSON.parse(array);
+console.log(arr);
 
-// 중복 없는 배열 만들기
-let count = 40;
-let totalARr = [];
-let arr = [];
-let arrNum = 1;
-let num = Math.floor(Math.random() * count);
-
-let peopleNum = localStorage.getItem("peopleNum");
-
-function makeArr() {
-  let i = 0;
-  while (i < peopleNum * 5) {
-    num = Math.floor(Math.random() * count);
-    if (!sameNum(num)) {
-      arr.push(num);
-      i++;
-    }
-  }
-  console.log(arr);
-}
-makeArr();
-
-function sameNum(n) {
-  for (var i = 0; i < arr.length; i++) {
-    if (n === arr[i]) {
-      return true;
-    }
-  }
-  return false;
-}
 // 사진 띄우기
 const image = document.createElement("img");
 const quizImg = document.querySelector(".img");
@@ -104,7 +77,7 @@ window.addEventListener("keydown", (e) => {
   if (order === 4) location.href = "http://localhost:3000/close/ranking_save";
   if (order < 5) order++;
   getPic(arr[order + 5 * (player - 1)]);
-
+  console.log(arr[order + 5 * (player - 1)]);
   //console.log(order);
   console.log(score);
   localStorage.setItem("SCORE", score);

@@ -9,11 +9,14 @@ inputScore.innerText = getScore;
 
 // 카테고리 표시
 let category;
-if (peopleNum) {
-  category = "sinseo";
-} else if (commonsenseNum) {
+if (document.referrer === "http://localhost:3000/close/commonsense/quiz") {
   category = "commonsense";
+} else if (
+  document.referrer === "http://localhost:3000/close/sinseo/peoplequiz"
+) {
+  category = "sinseo";
 }
+console.log(category);
 // post 요청
 function saveName() {
   const username = document.querySelector("input").value;
@@ -37,7 +40,7 @@ function saveName() {
 }
 // 인물퀴즈
 function Sinseo() {
-  if (category === "peoplequiz") {
+  if (category === "sinseo") {
     if (peopleNum !== 0 && PLAYER < peopleNum) {
       location.href = "http://localhost:3000/close/sinseo/player";
     } else if (peopleNum !== 0 && PLAYER === peopleNum) {
